@@ -1,0 +1,42 @@
+body {
+    font-size: 14px;
+}
+
+.container {
+ 
+  background: yellow;
+}
+
+.col-12 {
+  margin-top: 20px;
+}
+
+.carousel-indicators li:hover {
+  cursor: pointer;
+}
+.row {
+  margin-bottom: 30px;
+  min-height: 500px
+}
+span {
+  background: #f5f5f5;
+}
+
+.row>div:nth-of-type(odd){
+  background: blue;
+}
+.row>div:nth-of-type(even){
+  background: green;
+}
+.main{
+    height: 100vh;
+}
+.header{
+    height: 20%;
+}
+.footer{
+    height: 20%;
+}
+.mid{
+    height: 60%;
+}

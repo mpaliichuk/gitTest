@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        #resizable {
+            border: 1px solid black;
+            padding: 10px;
+            resize: both;
+            overflow: auto;
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="resizable" style="background-color:lightsalmon">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, molestias.</p>
+    </div>
+
+    <script>
+        var resizable = document.getElementById('resizable');
+        var isResizing = false;
+        var originalWidth, originalHeight;
+
+        resizable.addEventListener('mousedown', function (e) {
+            if (e.offsetX > resizable.offsetWidth - 10 && e.offsetY > resizable.offsetHeight - 10) {
+                isResizing = true;
+                originalWidth = resizable.offsetWidth;
+                originalHeight = resizable.offsetHeight;
+            }
+        });
+
+        document.addEventListener('mousemove', function (e) {
+            if (!isResizing) return;
+            resizable.style.width = originalWidth + e.clientX - resizable.offsetLeft + 'px';
+            resizable.style.height = originalHeight + e.clientY - resizable.offsetTop + 'px';
+        });
+
+        document.addEventListener('mouseup', function () {
+            isResizing = false;
+        });
+    </script>
+</body>
+</html>

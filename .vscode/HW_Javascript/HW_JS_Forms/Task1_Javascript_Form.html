@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        .comment {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body style="background-color:navajowhite">
+    <h1 style="font-weight:bold">What is Lorem Ipsum?</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum similique dignissimos animi at dolores doloremque rem explicabo voluptates ad nobis, voluptas praesentium soluta perspiciatis nemo magni aperiam incidunt, non eum libero! Rem aliquid sed modi quaerat ipsa asperiores explicabo corporis magnam obcaecati nisi eos impedit, cumque facere molestiae iusto omnis dignissimos quo, sequi repellat id cum. Assumenda sed, dolor aliquid minus delectus error soluta repellat vel repudiandae possimus, provident ullam ea. Nam non provident expedita quasi nemo libero! Excepturi id nesciunt illo tempora sequi dolorem ducimus iure quis nemo dolor, molestiae repudiandae atque nihil ad optio similique. Impedit, delectus sed?</p>
+  
+    <div id="comments"></div>
+
+    <h3>Leave your comment</h3>
+    <form id="commentForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br>
+        <label for="text">Comment:</label><br>
+        <textarea id="text" rows="4" cols="107" required></textarea><br>
+        <button type="submit" style="width:60%">Add comment</button>
+    </form>
+
+    <script>
+        function addComment(event) {
+            event.preventDefault();
+
+            var name = document.getElementById('name').value;
+            var text = document.getElementById('text').value;
+            var currentdate = new Date(); 
+            var datetime = currentdate.getDate() + "."
+                + (currentdate.getMonth()+1)  + "." 
+                + currentdate.getFullYear(); 
+
+            var commentHtml = '<div class="comment">';
+            commentHtml += '<strong>' + name + '</strong> ' + '<br>' + datetime + ':<br>';
+            commentHtml += text;
+            commentHtml += '</div>';
+
+            document.getElementById('comments').innerHTML += commentHtml;
+            document.getElementById('commentForm').reset();
+        }
+
+        document.getElementById('commentForm').addEventListener('submit', addComment);
+    </script>
+</body>
+</html>

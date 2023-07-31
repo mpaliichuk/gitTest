@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        class PrintMachine
+        {
+            constructor(fontSize, fontColor, fontFamily)
+            {
+                this.fontSize = fontSize;
+                this.fontColor = fontColor;
+                this.fontFamily = fontFamily;
+            }
+
+            print(text) 
+            {
+                document.write(`<p style="font-size: ${this.fontSize}; color: ${this.fontColor}; font-family: ${this.fontFamily};">${text}</p>`);
+            }
+        }
+
+        const printer = new PrintMachine('16px', 'green', 'Arial');
+        printer.print('Simple text that is formated by PrintMachine class');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

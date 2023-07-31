@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <style>
+    .editor {
+      display: none;
+    }
+  </style>
+</head>
+<body style="background-color: navajowhite">
+    <p>Press Ctrl + E for edit text.
+        <br/>Press Ctrl + S for save text.
+        <hr/>
+    </p>
+    
+
+    <br/>
+  <div id="text" onkeydown="handleKeyDown(event)">
+    
+  </div>
+  
+  <textarea id="editor" rows="10" cols="70" onkeydown="handleKeyDown(event)">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quia provident nesciunt, ratione similique sint sapiente dignissimos deserunt iusto. Nobis laudantium incidunt deleniti illo sit doloribus mollitia officia, voluptate, nemo consequuntur laborum iste ad? Similique deleniti autem tempora incidunt assumenda inventore, quod, natus voluptate repellat possimus officiis nostrum qui consequuntur.
+</textarea>
+
+  <script>
+    const textElement = document.getElementById('text');
+    const editorElement = document.getElementById('editor');
+  
+    function handleKeyDown(event) {
+      if (event.ctrlKey && event.key === 'e') {
+        event.preventDefault();
+        textElement.style.display = 'none';
+        editorElement.style.display = 'block';
+        editorElement.value = textElement.innerText;
+        editorElement.focus();
+      } else if (event.ctrlKey && event.key === 's') {
+        event.preventDefault();
+        textElement.innerText = editorElement.value;
+        textElement.style.display = 'block';
+        editorElement.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+     function Cat(name,color)
+     {
+      var _name=name;
+      var _color=color;
+      this.print=function()
+      {
+        document.write(_name);
+        document.write(_color);
+      };
+      this.setName=function(name)
+      {
+        _name=name;
+      }
+      this.setColor=function(color)
+      {
+        _age=color;
+      }
+      this.getName=function()
+      {
+        return _name;
+      }
+      this.getColor=function()
+      {
+        return color;
+      }
+     
+     }
+
+     function Animal(name,color)
+     {
+      Cat.call(this,name,color);
+      this.print=function()
+      {
+        document.write(this.getName());
+        document.write(this.getColor());
+      }
+      this.say=function()
+      {
+        document.write("Meow");
+      }
+     }
+     
+    let cat1=new Cat("Cat1","Black");
+    cat1.say();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

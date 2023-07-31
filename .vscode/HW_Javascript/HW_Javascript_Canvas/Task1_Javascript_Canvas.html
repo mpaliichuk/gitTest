@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function drawHistogram(canvasId, data, width, height, color, barMargin) {
+            const canvas = document.getElementById(canvasId);
+            const context = canvas.getContext('2d');
+
+            canvas.width = width;
+            canvas.height = height;
+
+            const maxData = Math.max(...data);
+            const barWidth = (width - (data.length - 1) * barMargin) / data.length;
+
+            for (let i = 0; i < data.length; i++) {
+                const barHeight = (data[i] / maxData) * height;
+                const x = i * (barWidth + barMargin);
+                const y = height - barHeight;
+
+                context.fillStyle = color;
+                context.fillRect(x, y, barWidth, barHeight);
+            }
+        }
+
+        window.addEventListener('load', function () {
+            const data = [30, 6, 88, 250, 2, 45, 100, 150, 200];
+            const barMargin = 5;
+            drawHistogram('canvas', data, 400, 300, 'green', barMargin);
+        });
+    </script>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+
+</html>

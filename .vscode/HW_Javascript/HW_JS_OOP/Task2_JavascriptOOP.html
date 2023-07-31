@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    function Dot(x,y){
+        var _x = x;
+        var _y = y;
+        this.printDot = function()
+        {
+            document.writeln("X = " + _x);
+            document.writeln("Y = " + _y);
+        }
+        this.setX = function(x)
+        {
+            _x = x;
+        }
+        this.setY = function(y)
+        {
+            _y = y;
+        }
+        this.getX = function()
+        {
+            return _x;
+        }
+        this.getY = function()
+        {
+            return _y;
+        }
+       
+    }
+    function Rectangle(dots){
+        var _dots = dots;
+        this.printRectangle = function()
+        {
+            for(var i = 0; i < _dots.length; i++)
+            {
+                document.writeln(_dots[i] + "<br>");
+            }
+        }
+        
+       
+    }
+
+    var dot1 = new Dot(5,10);
+    dot1.printDot();
+    document.writeln("<br>");
+
+    var rectangleDots = [1,2,3,4];
+    var rectangle1 = new Rectangle(rectangleDots);
+    rectangle1.printRectangle();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function User(firstName, lastName, age)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+        }
+        User.prototype.fullName = function () 
+        {
+            return this.firstName + ' ' + this.lastName;
+        }
+        var user = new User('John', 'Smith', 25);
+        console.log(user.fullName());
+
+        function SuperUser(firstName, lastName, age, role)
+        {
+            User.call(this, firstName, lastName, age);
+            this.role = role;
+        }
+        
+        SuperUser.prototype = Object.create(User.prototype);
+        SuperUser.prototype.constructor = SuperUser;
+
+        
+        var superUser = new SuperUser('Nick', 'Root', 30, 'Admin');
+        console.log(superUser.fullName());
+        console.log(superUser.role);
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

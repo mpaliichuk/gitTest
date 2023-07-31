@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        #dragDiv {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            position: absolute;
+            cursor: move;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var dragDiv = document.getElementById('dragDiv');
+
+            var isDragging = false;
+            var offsetX, offsetY;
+            dragDiv.addEventListener('mousedown', startDrag);
+            dragDiv.addEventListener('mouseup', stopDrag);
+
+            function startDrag(event) {
+                isDragging = true;
+                offsetX = event.clientX - dragDiv.offsetLeft;
+                offsetY = event.clientY - dragDiv.offsetTop;
+            }
+
+            function stopDrag() {
+                isDragging = false;
+            }
+
+            document.addEventListener('mousemove', drag);
+            function drag(event) {
+                if (isDragging) {
+                    dragDiv.style.left = (event.clientX - offsetX) + 'px';
+                    dragDiv.style.top = (event.clientY - offsetY) + 'px';
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="dragDiv"></div>
+</body>
+</html>

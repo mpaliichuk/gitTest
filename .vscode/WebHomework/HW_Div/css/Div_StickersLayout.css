@@ -1,0 +1,52 @@
+.Row {
+    display: table;
+    width: 60%;
+    table-layout: fixed;
+    border-spacing: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+.Column1 {
+    display: table-cell;
+    background-color: brown;
+    border-style: solid;
+    border-color: blue;
+    height: 400px;
+    padding-top: 10px;
+}
+.Column2 {
+    display: table-cell;
+    background-color: lightgreen;
+    border-style: solid;
+    border-color: blue;
+}
+.Column3 {
+    display: table-cell;
+    background-color: lightskyblue;
+    border-style: solid;
+    border-color: blue;
+}
+.header1 {
+    display: table-cell;
+    background-color: brown;
+    color: white;
+    border-style: solid;
+    border-color: blue;
+    height: 50px;
+    padding-top: 20px;
+}
+.header2 {
+    display: table-cell;
+    background-color: green;
+    color: white;
+    border-style: solid;
+    border-color: blue;
+}
+.header3 {
+    display: table-cell;
+    background-color: darkblue;
+    color: white;
+    border-style: solid;
+    border-color: blue;
+}

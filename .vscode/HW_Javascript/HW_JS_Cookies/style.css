@@ -1,0 +1,40 @@
+.table-register{ 
+    margin:0 auto; 
+    padding:10px; 
+ } 
+body
+{
+    background-color: wheat;
+}
+  
+ #about{ 
+  
+     resize:none; 
+     width:200px; 
+     height:100px; 
+ } 
+  
+ #last-cell{ 
+  
+     text-align:center; 
+  
+ } 
+  
+ input[type="text"], input[type="password"]{ 
+     width:200px; 
+     height:20px; 
+  
+ } 
+  
+ .error{ 
+     font-size:13px; 
+     color:red; 
+     visibility:hidden; 
+  
+ }
+ .color-item {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 5px;
+  }
